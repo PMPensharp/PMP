@@ -3,11 +3,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment3">
+    tools:context=".Fragment3"
+    android:orientation="vertical">
+   <androidx.appcompat.widget.Toolbar
+      android:layout_marginTop="20dp"
+       android:id="@+id/toolbar"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       >
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+         android:orientation="vertical"
+          android:layout_margin="0dp">
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+             android:orientation="horizontal">
+      <TextView
+          android:layout_marginLeft="20dp"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="#41738F"
+          android:textSize="40dp"
+          android:textStyle="bold"
+          android:text="발전소현황 ">
+
+      </TextView>
+
+      <LinearLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          android:orientation="vertical"
+          android:layout_marginLeft="50dp"
+         >
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="발전본부"/>
+
+         <Spinner
+
+             android:layout_width="100dp"
+
+             android:layout_height="wrap_content"
+
+             android:id="@+id/spinner"
+
+             android:spinnerMode="dropdown"
+
+             android:textColor="@color/black"
+
+             />
+
+
+      </LinearLayout>
+          </LinearLayout>
+
+         <View
+             android:layout_marginTop="10dp"
+             android:layout_width="match_parent"
+             android:layout_height="5dp"
+             android:background="#41738F"
+             android:layout_marginRight="19dp"/>
+      </LinearLayout>
+   </androidx.appcompat.widget.Toolbar>
 
    <androidx.recyclerview.widget.RecyclerView
        android:id="@+id/rv3"
        android:layout_width="match_parent"
-       android:layout_height="match_parent" />
+       android:layout_height="match_parent"
+       android:scrollbars="horizontal"/>
+
 
 </LinearLayout>
