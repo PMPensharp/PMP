@@ -195,9 +195,29 @@
             <com.github.mikephil.charting.charts.LineChart
                 android:id="@+id/lineChart"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="300dp"/>
 
         </LinearLayout>
+            <LinearLayout
+                android:id="@+id/hiddenlayout2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/picChart2"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    />
+
+                <com.github.mikephil.charting.charts.HorizontalBarChart
+                    android:id="@+id/barchart"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    />
+
+            </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
