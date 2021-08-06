@@ -25,8 +25,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 BottomNavigate(menuItem.getItemId());
-
-
                 return true;
             }
         });
@@ -58,12 +56,9 @@ public class MainActivity extends AppCompatActivity {
         } else {
             fragmentTransaction.show(fragment);
         }
-
         fragmentTransaction.setPrimaryNavigationFragment(fragment);
         fragmentTransaction.setReorderingAllowed(true);
         fragmentTransaction.commitNow();
-
-
     }
 
 }
