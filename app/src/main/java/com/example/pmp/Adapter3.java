@@ -34,6 +34,7 @@ import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
@@ -73,44 +74,87 @@ public class Adapter3 extends RecyclerView.Adapter<Adapter3.ViewHolder  > {
 
         viewHolder.name.setText(myDataList.get(position).getDataName());
 
-        double totalTasks = 5000.0;
-        double powerTask=myDataList.get(position).getDataPower();
-        double restTask=totalTasks-powerTask;
 
-        double percentagePower = (powerTask*100.0)/totalTasks;
-        double percentageRest = (restTask*100.0)/totalTasks;
+        double powerTask=myDataList.get(position).getDataPower();
+
 
         if(getColor(myDataList.get(position).getDataColor())==1){//기력
+            double totalTasks = 500000.0;
+            double restTask=totalTasks-powerTask;
+
+            double percentagePower = (powerTask*100.0)/totalTasks;
+            double percentageRest = (restTask*100.0)/totalTasks;
             viewHolder.view.setBackgroundColor(Color.parseColor("#FFB900"));
             viewHolder.power.setBackgroundColor(Color.parseColor("#FFB900"));
             int[] colorArray=new int[] {Color.parseColor("#515151"),Color.parseColor("#FFB900")};
             viewHolder.buildChart2((int) (percentageRest),(int) (percentagePower),powerTask,colorArray);
             viewHolder.horizonBarChart();
+            viewHolder.horizonBarChart2();
+
+            viewHolder.power.setVisibility(View.VISIBLE);
+            viewHolder.rest.setVisibility(View.VISIBLE);
+            viewHolder.view.setVisibility(View.VISIBLE);
+
+
+            //그래프
+            viewHolder.power.setLayoutParams(new LinearLayout.LayoutParams((int) (percentagePower*10),50));
+            viewHolder.rest.setLayoutParams(new LinearLayout.LayoutParams( (int) (percentageRest*10),50));
         }
         else if(getColor(myDataList.get(position).getDataColor())==2){//풍력
+            double totalTasks = 1140.0;
+            double restTask=totalTasks-powerTask;
+
+            double percentagePower = (powerTask*100.0)/totalTasks;
+            double percentageRest = (restTask*100.0)/totalTasks;
             viewHolder.view.setBackgroundColor(Color.parseColor("#00C2FF"));
             viewHolder.power.setBackgroundColor(Color.parseColor("#00C2FF"));
             int[] colorArray=new int[] {Color.parseColor("#515151"),Color.parseColor("#00C2FF")};
             viewHolder.buildChart((int) (percentageRest),(int) (percentagePower),powerTask,colorArray);
             viewHolder.buildLineChart();
+
+            viewHolder.power.setVisibility(View.VISIBLE);
+            viewHolder.rest.setVisibility(View.VISIBLE);
+            viewHolder.view.setVisibility(View.VISIBLE);
+
+
+            //그래프
+            viewHolder.power.setLayoutParams(new LinearLayout.LayoutParams((int) (percentagePower*10),50));
+            viewHolder.rest.setLayoutParams(new LinearLayout.LayoutParams((int) (percentageRest*10),50));
         }
         else if(getColor(myDataList.get(position).getDataColor())==3){//태양력
+
+            viewHolder.backimage.setImageResource(R.drawable.redfield);
+            viewHolder.wind.setImageResource(R.drawable.rain);
+
+            viewHolder.text1.setText("온도");
+            viewHolder.text2.setText("29℃");
+            viewHolder.text3.setText("강수확률");
+            viewHolder.text4.setText("20%");
+
+            double totalTasks = 200.0;
+            double restTask=totalTasks-powerTask;
+
+            double percentagePower = (powerTask*100.0)/totalTasks;
+            double percentageRest = (restTask*100.0)/totalTasks;
+
             viewHolder.view.setBackgroundColor(Color.parseColor("#FF4D00"));
             viewHolder.power.setBackgroundColor(Color.parseColor("#FF4D00"));
             int[] colorArray=new int[] {Color.parseColor("#515151"),Color.parseColor("#FF4D00")};
             viewHolder.buildChart((int) (percentageRest),(int) (percentagePower),powerTask,colorArray);
-            viewHolder.buildLineChart();
+            viewHolder.buildLineChart2();
+
+            viewHolder.power.setVisibility(View.VISIBLE);
+            viewHolder.rest.setVisibility(View.VISIBLE);
+            viewHolder.view.setVisibility(View.VISIBLE);
+
+
+            //그래프
+            viewHolder.power.setLayoutParams(new LinearLayout.LayoutParams((int) (percentagePower*10),50));
+            viewHolder.rest.setLayoutParams(new LinearLayout.LayoutParams( (int) (percentageRest*10),50));
         }
 
 
-        viewHolder.power.setVisibility(View.VISIBLE);
-        viewHolder.rest.setVisibility(View.VISIBLE);
-        viewHolder.view.setVisibility(View.VISIBLE);
 
-
-        //그래프
-        viewHolder.power.setLayoutParams(new LinearLayout.LayoutParams((int) (percentagePower*10),50));
-        viewHolder.rest.setLayoutParams(new LinearLayout.LayoutParams( (int) (percentageRest*10),50));
 
         if(getColor(myDataList.get(position).getDataColor())==1){
             viewHolder.changeVisibility2(selectedItems.get(position));
@@ -175,7 +219,11 @@ public class Adapter3 extends RecyclerView.Adapter<Adapter3.ViewHolder  > {
         CardView card;
         PieChart pieChart,pieChart2;
         LineChart lineChart;
-        HorizontalBarChart barchart;
+        HorizontalBarChart barchart,barchart_p;
+
+        ImageView backimage,wind;
+
+        TextView text1,text2,text3,text4;
 
         OnViewHolderItemClickListener onViewHolderItemClickListener;
 
@@ -196,6 +244,16 @@ public class Adapter3 extends RecyclerView.Adapter<Adapter3.ViewHolder  > {
             pieChart2=itemView.findViewById(R.id.picChart2);
             barchart=itemView.findViewById(R.id.barchart);
             hiddenlayout2=itemView.findViewById(R.id.hiddenlayout2);
+
+            barchart_p=itemView.findViewById(R.id.barchart_p);
+
+            backimage=itemView.findViewById(R.id.backimage);
+            wind =itemView.findViewById(R.id.wind);
+
+            text1=itemView.findViewById(R.id.text1);
+            text2=itemView.findViewById(R.id.text2);
+            text3=itemView.findViewById(R.id.text3);
+            text4=itemView.findViewById(R.id.text4);
 
             card.setOnClickListener(new View.OnClickListener(){
 
@@ -256,7 +314,7 @@ public class Adapter3 extends RecyclerView.Adapter<Adapter3.ViewHolder  > {
             pieChart.setDrawEntryLabels(false);
             pieChart.setUsePercentValues(false);
             pieData.setValueTextSize(10);
-            pieChart.setCenterText(b+"%");
+            pieChart.setCenterText(c+"");
             pieChart.setCenterTextSize(25);
             pieChart.setHoleRadius(30);
             pieChart.setData(pieData);
@@ -274,7 +332,7 @@ public class Adapter3 extends RecyclerView.Adapter<Adapter3.ViewHolder  > {
             pieChart2.setDrawEntryLabels(false);
             pieChart2.setUsePercentValues(false);
             pieData.setValueTextSize(10);
-            pieChart2.setCenterText(b+"%");
+            pieChart2.setCenterText(c+"");
             pieChart2.setCenterTextSize(25);
             pieChart2.setHoleRadius(30);
             pieChart2.setData(pieData);
@@ -284,12 +342,94 @@ public class Adapter3 extends RecyclerView.Adapter<Adapter3.ViewHolder  > {
         }
 
         public void buildLineChart(){
+            ArrayList<Entry> values1 = new ArrayList<>();
+            ArrayList<Entry> values2=new ArrayList<>();
+
+            values1.add(new Entry(1,1565));
+            values1.add(new Entry(2,1597));
+            values1.add(new Entry(3,815));
+            values1.add(new Entry(4,2256));
+            values1.add(new Entry(5,665));
+            values1.add(new Entry(6,719));
+            values1.add(new Entry(7,1020));
+            values1.add(new Entry(8,807));
+            values1.add(new Entry(9,916));
+            values1.add(new Entry(10,2218));
+            values1.add(new Entry(11,2291));
+            values1.add(new Entry(12,2112));
+            values1.add(new Entry(13,1128));
+
+            values2.add(new Entry(1,1030));
+            values2.add(new Entry(2,1034));
+            values2.add(new Entry(3,1042));
+            values2.add(new Entry(4,1738));
+            values2.add(new Entry(5,1005));
+            values2.add(new Entry(6,946));
+            values2.add(new Entry(7,881));
+            values2.add(new Entry(8,839));
+            values2.add(new Entry(9,841));
+            values2.add(new Entry(10,2018));
+            values2.add(new Entry(11,2198));
+            values2.add(new Entry(12,2219));
+            values2.add(new Entry(13,1121));
+            values2.add(new Entry(14,1140));
+            values2.add(new Entry(15,1113));
+            values2.add(new Entry(16,1055));
+            values2.add(new Entry(17,994));
+            values2.add(new Entry(18,961));
+            values2.add(new Entry(19,971));
+            values2.add(new Entry(20,1017));
+            values2.add(new Entry(21,1074));
+            values2.add(new Entry(22,1118));
+            values2.add(new Entry(23,1134));
+            values2.add(new Entry(24,1131));
+
+
+            LineDataSet set1;
+            LineDataSet set2;
+
+            set1 = new LineDataSet(values1, "현재");
+            set2= new LineDataSet(values2,"예측량");
+
+            ArrayList<ILineDataSet> dataSets = new ArrayList<>();
+            dataSets.add(set1); // add the data sets
+            dataSets.add(set2);
+
+            // create a data object with the data sets
+            LineData data = new LineData(dataSets);
+
+            // black lines and points
+            set1.setColor(Color.parseColor("#00C2FF"));
+            set1.setCircleColor(Color.parseColor("#00C2FF"));
+            set1.setLineWidth(3);
+
+            set2.setColor(Color.parseColor("#515151"));
+            set2.setCircleColor(Color.parseColor("#515151"));
+
+
+            // set data
+            lineChart.setData(data);
+            lineChart.setVisibleXRangeMaximum(6); // allow 20 values to be displayed at once on the x-axis, not more
+            lineChart.moveViewToX(10); // set the left edge of the chart to x-index 10
+
+        }
+
+        public void buildLineChart2(){
             ArrayList<Entry> values = new ArrayList<>();
 
-            for(int i=1;i<=12;i++){
-                float val =(float) (Math.random()*10);
-                values.add(new Entry(i,val));
-            }
+            values.add(new Entry(1,0));
+            values.add(new Entry(2,0));
+            values.add(new Entry(3,0));
+            values.add(new Entry(4,0));
+            values.add(new Entry(5,0));
+            values.add(new Entry(6,0));
+            values.add(new Entry(7,1));
+            values.add(new Entry(8,26));
+            values.add(new Entry(9,54));
+            values.add(new Entry(10,92));
+            values.add(new Entry(11,114));
+            values.add(new Entry(12,131));
+            values.add(new Entry(13,136));
 
             LineDataSet set1;
             set1 = new LineDataSet(values, "DataSet 1");
@@ -301,37 +441,94 @@ public class Adapter3 extends RecyclerView.Adapter<Adapter3.ViewHolder  > {
             LineData data = new LineData(dataSets);
 
             // black lines and points
-            set1.setColor(Color.BLACK);
-            set1.setCircleColor(Color.BLACK);
+            set1.setColor(Color.RED);
+            set1.setCircleColor(Color.RED);
+            set1.setLineWidth(3);
+
 
             // set data
             lineChart.setData(data);
+
+            lineChart.setVisibleXRangeMaximum(6); // allow 20 values to be displayed at once on the x-axis, not more
+            lineChart.moveViewToX(10); // set the left edge of the chart to x-index 10
         }
 
         public void horizonBarChart(){
             BarDataSet set1;
-            set1 = new BarDataSet(getDataSet(), "The year 2017");
+            set1 = new BarDataSet(getDataSet(), "20190808");
             set1.setColors(Color.parseColor("#F78B5D"), Color.parseColor("#FCB232"), Color.parseColor("#FDD930"), Color.parseColor("#ADD137"), Color.parseColor("#A0C25A"));
             ArrayList<IBarDataSet> dataSets = new ArrayList<IBarDataSet>();
             dataSets.add(set1);
             BarData data = new BarData(dataSets);
             // hide Y-axis
-            YAxis left = barchart.getAxisLeft();
-            left.setDrawLabels(false);
+            YAxis left = barchart.getAxisRight();
+            left.setDrawLabels(true);
+            left.setDrawAxisLine(true);
+
             // custom X-axis labels
-            String[] values = new String[] { "1 star", "2 stars", "3 stars", "4 stars", "5 stars"};
+            String[] values = new String[] { "1시", "2시", "3시", "4시", "5시","6시", "7시", "8시", "9시", "10시","11시", "12시", "13시"};
+
+
             XAxis xAxis = barchart.getXAxis();
-            xAxis.setValueFormatter(new MyXAxisValueFormatter(values));
+            xAxis.setDrawLabels(true);
+            xAxis.setGranularity(1);
+            xAxis.setValueFormatter(new ValueFormatter() {
+                @Override
+                public String getFormattedValue(float value, AxisBase axis) {
+                    return values[(int) value]; // xVal is a string array
+                }
+            });
+            xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+
             barchart.setData(data);
             // custom description
             Description description = new Description();
-            description.setText("Rating");
+            description.setText("발전량");
             barchart.setDescription(description);
             // hide legend
             barchart.getLegend().setEnabled(false);
-            barchart.animateY(1000);
+            barchart.animateXY(1000,1000);
             barchart.invalidate();
         }
+
+        public void horizonBarChart2(){
+            BarDataSet set1;
+            set1 = new BarDataSet(getDataSet2(), "20190808예측량");
+            set1.setColors(Color.parseColor("#515151"));
+            ArrayList<IBarDataSet> dataSets = new ArrayList<IBarDataSet>();
+            dataSets.add(set1);
+            BarData data = new BarData(dataSets);
+            // hide Y-axis
+            YAxis left = barchart_p.getAxisRight();
+            left.setDrawLabels(true);
+            left.setDrawAxisLine(true);
+
+            // custom X-axis labels
+            String[] values = new String[] { "15시", "16시"};
+
+
+            XAxis xAxis = barchart_p.getXAxis();
+            xAxis.setDrawLabels(true);
+            xAxis.setGranularity(1);
+            xAxis.setValueFormatter(new ValueFormatter() {
+                @Override
+                public String getFormattedValue(float value, AxisBase axis) {
+                    return values[(int) value]; // xVal is a string array
+                }
+            });
+            xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+
+            barchart_p.setData(data);
+            // custom description
+            Description description = new Description();
+            description.setText("예측량");
+            barchart_p.setDescription(description);
+            // hide legend
+            barchart_p.getLegend().setEnabled(false);
+            barchart_p.animateXY(1000,1000);
+            barchart_p.invalidate();
+        }
+
         private ArrayList<PieEntry> data1(int a,int b){
             ArrayList<PieEntry> datavalue= new ArrayList<>();
 
@@ -343,16 +540,48 @@ public class Adapter3 extends RecyclerView.Adapter<Adapter3.ViewHolder  > {
 
         private ArrayList<BarEntry> getDataSet() {
             ArrayList<BarEntry> valueSet1 = new ArrayList<>();
-            BarEntry v1e2 = new BarEntry(1, 4341f);
+            BarEntry v1e2 = new BarEntry(1, 467057);
             valueSet1.add(v1e2);
-            BarEntry v1e3 = new BarEntry(2, 3121f);
+            BarEntry v1e3 = new BarEntry(2, 466165);
             valueSet1.add(v1e3);
-            BarEntry v1e4 = new BarEntry(3, 5521f);
+            BarEntry v1e4 = new BarEntry(3, 464846);
             valueSet1.add(v1e4);
-            BarEntry v1e5 = new BarEntry(4, 10421f);
+            BarEntry v1e5 = new BarEntry(4, 464667);
             valueSet1.add(v1e5);
-            BarEntry v1e6 = new BarEntry(5, 27934f);
+            BarEntry v1e6 = new BarEntry(5, 465035);
             valueSet1.add(v1e6);
+            BarEntry v1e7 = new BarEntry(6, 465597);
+            valueSet1.add(v1e7);
+            BarEntry v1e8 = new BarEntry(7, 465189);
+            valueSet1.add(v1e8);
+            BarEntry v1e9 = new BarEntry(8, 465352);
+            valueSet1.add(v1e9);
+            BarEntry v1e10 = new BarEntry(9, 467570);
+            valueSet1.add(v1e10);
+            BarEntry v1e11 = new BarEntry(10, 467376);
+            valueSet1.add(v1e11);
+            BarEntry v1e12 = new BarEntry(11, 467083);
+            valueSet1.add(v1e12);
+            BarEntry v1e13 = new BarEntry(12, 466855);
+            valueSet1.add(v1e13);
+            BarEntry v1e14 = new BarEntry(13, 466262);
+            valueSet1.add(v1e14);
+            BarEntry v1e15 = new BarEntry(14, 469914);
+            valueSet1.add(v1e15);
+
+
+            return valueSet1;
+        }
+
+        private ArrayList<BarEntry> getDataSet2() {
+            ArrayList<BarEntry> valueSet1 = new ArrayList<>();
+            BarEntry v1e2 = new BarEntry(15, 437130);
+            valueSet1.add(v1e2);
+            BarEntry v1e3 = new BarEntry(16, 438610);
+            valueSet1.add(v1e3);
+
+
+
             return valueSet1;
         }
 
@@ -373,7 +602,11 @@ public class Adapter3 extends RecyclerView.Adapter<Adapter3.ViewHolder  > {
             return mValues[(int) value];
         }
     }
+
+
 }
+
+
 
 
 

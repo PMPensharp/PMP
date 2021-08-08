@@ -128,19 +128,20 @@
                         android:layout_width="65dp"
                         android:layout_height="65dp"
                         android:src="@drawable/pung"
-                        android:layout_marginTop="15dp"/>
+                        android:layout_marginTop="18dp"/>
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:layout_marginLeft="7dp">
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="5dp">
                         <TextView
                             android:id="@+id/text1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="풍속"
-                            android:textSize="15dp"/>
+                            android:textSize="13dp"/>
                         <TextView
                             android:id="@+id/text2"
                             android:layout_width="wrap_content"
@@ -152,7 +153,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="풍향"
-                            android:textSize="15dp"/>
+                            android:textSize="13dp"/>
                         <TextView
                             android:id="@+id/text4"
                             android:layout_width="wrap_content"
@@ -166,7 +167,7 @@
                         android:layout_width="3dp"
                         android:layout_height="75dp"
                         android:layout_marginTop="15dp"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginLeft="20dp"
                         android:background="#B9B9B9"/>
                     <ImageView
                         android:id="@+id/clean"
@@ -174,7 +175,7 @@
                         android:layout_height="70dp"
                         android:src="@drawable/clean"
                         android:layout_marginLeft="7dp"
-                        android:layout_marginTop="10dp"/>
+                        android:layout_marginTop="15dp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -185,12 +186,19 @@
                         android:layout_marginTop="27dp"/>
                 </LinearLayout>
             </FrameLayout>
-
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="14시"
+                android:textSize="20dp"
+                android:layout_marginLeft="30dp"
+                />
             <com.github.mikephil.charting.charts.PieChart
                 android:id="@+id/picChart"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 />
+
 
             <com.github.mikephil.charting.charts.LineChart
                 android:id="@+id/lineChart"
@@ -204,6 +212,19 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:visibility="gone">
+                <com.github.mikephil.charting.charts.HorizontalBarChart
+                    android:id="@+id/barchart_p"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+
+                    android:text="14시"
+                    android:textSize="20dp"/>
 
                 <com.github.mikephil.charting.charts.PieChart
                     android:id="@+id/picChart2"
@@ -211,10 +232,12 @@
                     android:layout_height="200dp"
                     />
 
+
+
                 <com.github.mikephil.charting.charts.HorizontalBarChart
                     android:id="@+id/barchart"
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"
+                    android:layout_height="500dp"
                     />
 
             </LinearLayout>

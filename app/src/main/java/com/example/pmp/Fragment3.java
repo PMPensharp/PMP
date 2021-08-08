@@ -50,13 +50,22 @@ public class Fragment3 extends Fragment {
     {
         dataList = new ArrayList<>();
 
-        dataList.add(new Data("성산풍력", 3333.0,"풍력"));
-        dataList.add(new Data("한경풍력", 2222.0,"풍력"));
-        dataList.add(new Data("남제주태양광", 4444.0,"태양력"));
-        dataList.add(new Data("한림복합", 4700.0,"기력"));
-        dataList.add(new Data("남제주기력#1", 3500.0,"기력"));
-        dataList.add(new Data("남제주기력#2", 4444.0,"기력"));
-
+        dataList.add(new Data("성산풍력 #1", 1476.0,"풍력"));
+        dataList.add(new Data("성산풍력 #2", 898.0,"풍력"));
+        dataList.add(new Data("남제주태양광", 134.049,"태양력"));
+        dataList.add(new Data("한림복합 #1", 370000.0,"기력"));
+        dataList.add(new Data("한림복합 #2", 460000.0,"기력"));
+        dataList.add(new Data("한림복합 #3", 470000.0,"기력"));
+        dataList.add(new Data("남제주기력 #1", 350000.0,"기력"));
+        dataList.add(new Data("남제주기력 #2", 444040.0,"기력"));
+        dataList.add(new Data("하동 #1", 469914.0,"기력"));
+        dataList.add(new Data("하동 #2", 496000.0,"기력"));
+        dataList.add(new Data("하동 #3", 495174.7,"기력"));
+        dataList.add(new Data("하동 #4", 485600.2,"기력"));
+        dataList.add(new Data("하동 #5", 494051.2,"기력"));
+        dataList.add(new Data("하동 #6", 481611.7,"기력"));
+        dataList.add(new Data("하동 #7", 463872.0,"기력"));
+        dataList.add(new Data("하동 #8", 449931.8,"기력"));
     }
 
 }

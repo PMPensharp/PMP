@@ -2,27 +2,23 @@
 <resources>
     <string-array name="spinnerArray">
 
-        <item> 하동 </item>
-
-        <item> 삼척  </item>
+        <item> -전체- </item>
 
         <item> 남제주 </item>
+
+        <item> 하동  </item>
+
+        <item> 삼척 </item>
 
         <item> 신인천  </item>
 
         <item> 부산 </item>
 
-        <item> 한림 </item>
-
         <item> 안동 </item>
-
-        <item> 한경 </item>
 
         <item> 성산 </item>
 
         <item> 영월 </item>
-
-        <item> 한림 </item>
 
         <item> 수산 </item>
 
