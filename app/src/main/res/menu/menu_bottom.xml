@@ -2,14 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/icon1"
-        android:icon="@android:drawable/ic_menu_search"
-        android:title="1" />
+        android:icon="@drawable/main_more_icon"
+        android:title="에너지별" />
     <item
         android:id="@+id/icon2"
-        android:icon="@android:drawable/ic_menu_info_details"
-        android:title="2" />
+        android:icon="@drawable/main_record_icon"
+        android:title="발전소별" />
     <item
         android:id="@+id/icon3"
-        android:icon="@android:drawable/ic_menu_zoom"
-        android:title="3" />
+        android:icon="@drawable/main_list_icon"
+        android:title="총발전량" />
 </menu>
