@@ -416,6 +416,7 @@ public class Adapter3 extends RecyclerView.Adapter<Adapter3.ViewHolder  > {
 
         public void buildLineChart2(){
             ArrayList<Entry> values = new ArrayList<>();
+            ArrayList<Entry> values2= new ArrayList<>();
 
             values.add(new Entry(1,0));
             values.add(new Entry(2,0));
@@ -431,20 +432,52 @@ public class Adapter3 extends RecyclerView.Adapter<Adapter3.ViewHolder  > {
             values.add(new Entry(12,131));
             values.add(new Entry(13,136));
 
+            values2.add(new Entry(1,0));
+            values2.add(new Entry(2,0));
+            values2.add(new Entry(3,0));
+            values2.add(new Entry(4,0));
+            values2.add(new Entry(5,0));
+            values2.add(new Entry(6,0));
+            values2.add(new Entry(7,0));
+            values2.add(new Entry(8,29));
+            values2.add(new Entry(9,60));
+            values2.add(new Entry(10,110));
+            values2.add(new Entry(11,120));
+            values2.add(new Entry(12,134));
+            values2.add(new Entry(13,142));
+            values2.add(new Entry(14,130));
+            values2.add(new Entry(15,120));
+            values2.add(new Entry(16,101));
+            values2.add(new Entry(17,72));
+            values2.add(new Entry(18,28));
+            values2.add(new Entry(19,6));
+            values2.add(new Entry(20,0));
+            values2.add(new Entry(21,0));
+            values2.add(new Entry(22,0));
+            values2.add(new Entry(23,0));
+            values2.add(new Entry(24,0));
+
             LineDataSet set1;
-            set1 = new LineDataSet(values, "DataSet 1");
+            LineDataSet set2;
+
+            set1 = new LineDataSet(values, "현재");
+            set2= new LineDataSet(values2,"예측량");
 
             ArrayList<ILineDataSet> dataSets = new ArrayList<>();
             dataSets.add(set1); // add the data sets
+            dataSets.add(set2);
 
             // create a data object with the data sets
             LineData data = new LineData(dataSets);
+
 
             // black lines and points
             set1.setColor(Color.RED);
             set1.setCircleColor(Color.RED);
             set1.setLineWidth(3);
 
+            set2.setColor(Color.parseColor("#515151"));
+            set2.setCircleColor(Color.parseColor("#515151"));
 
             // set data
             lineChart.setData(data);
