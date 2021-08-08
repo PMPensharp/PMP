@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/navigation_1"
-        android:icon="@drawable/main_record_icon"
-        android:title="화면 1" />
+        android:icon="@drawable/icon1"
+        android:title="에너지별" />
 
     <item
         android:id="@+id/navigation_2"
-        android:icon="@drawable/main_more_icon"
-        android:title="화면 2" />
+        android:icon="@drawable/icon2"
+        android:title="발전소별" />
 
     <item
         android:id="@+id/navigation_3"
-        android:icon="@drawable/main_list_icon"
-        android:title="화면 3" />
+        android:icon="@drawable/icon3"
+        android:title="총발전량" />
 
 </menu>
