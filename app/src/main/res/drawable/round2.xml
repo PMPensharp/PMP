@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    android:padding="7dp"
+    android:shape="rectangle"
+
+    <solid android:color="#FF023481" />
+    <!--    배경색 설정 -->
+
+    <!-- 각 모서리 라운딩 설정 -->
+    <corners
+        android:bottomLeftRadius="30dp"
+        android:bottomRightRadius="0dp"
+        android:topLeftRadius="30dp"
+        android:topRightRadius="30dp" />
+    <!-- 좌측 여백 -->
+    <padding
+        android:bottom="10dp"
+        android:left="10dp"
+        android:right="10dp"
+        />
+
+    <!-- 라운드 테두리 두께 / 색상 설정 -->
+    <stroke
+        android:width="3dp"
+        android:color="#FF023481" />
+
+</shape>
