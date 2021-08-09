@@ -130,10 +130,10 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="end"
                                 android:includeFontPadding="false"
-                                android:text="1"
+                                android:text="34"
                                 android:textAlignment="textEnd"
                                 android:textColor="@android:color/black"
-                                android:textSize="50dp"
+                                android:textSize="40dp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -169,10 +169,10 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="end"
                                 android:includeFontPadding="false"
-                                android:text="1"
+                                android:text="33"
                                 android:textAlignment="textEnd"
                                 android:textColor="@android:color/black"
-                                android:textSize="50dp"
+                                android:textSize="40dp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -209,7 +209,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#FFFF4D00"
-                    android:text="태양열"
+                    android:text="열병합"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp" />
 
@@ -254,10 +254,10 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="end"
                                 android:includeFontPadding="false"
-                                android:text="1"
+                                android:text="336"
                                 android:textAlignment="textEnd"
                                 android:textColor="@android:color/black"
-                                android:textSize="50dp"
+                                android:textSize="40dp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -293,10 +293,10 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="end"
                                 android:includeFontPadding="false"
-                                android:text="1"
+                                android:text="341"
                                 android:textAlignment="textEnd"
                                 android:textColor="@android:color/black"
-                                android:textSize="50dp"
+                                android:textSize="40dp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -332,7 +332,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#FFFFB900"
-                    android:text="기력"
+                    android:text="원자력"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp" />
 
@@ -377,10 +377,10 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="end"
                                 android:includeFontPadding="false"
-                                android:text="1"
+                                android:text="18219"
                                 android:textAlignment="textEnd"
                                 android:textColor="@android:color/black"
-                                android:textSize="50dp"
+                                android:textSize="40dp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -416,10 +416,10 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="end"
                                 android:includeFontPadding="false"
-                                android:text="1"
+                                android:text="18221"
                                 android:textAlignment="textEnd"
                                 android:textColor="@android:color/black"
-                                android:textSize="50dp"
+                                android:textSize="40dp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -500,10 +500,10 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="end"
                                 android:includeFontPadding="false"
-                                android:text="1"
+                                android:text="6066"
                                 android:textAlignment="textEnd"
                                 android:textColor="@android:color/black"
-                                android:textSize="50dp"
+                                android:textSize="40dp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -539,10 +539,10 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="end"
                                 android:includeFontPadding="false"
-                                android:text="1"
+                                android:text="6070"
                                 android:textAlignment="textEnd"
                                 android:textColor="@android:color/black"
-                                android:textSize="50dp"
+                                android:textSize="40dp"
                                 android:textStyle="bold" />
 
                             <TextView
