@@ -42,8 +42,8 @@
 
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/piechart"
-        android:layout_width="344dp"
-        android:layout_height="268dp"
+        android:layout_width="317dp"
+        android:layout_height="241dp"
         android:layout_gravity="center" />
 
     <EditText
