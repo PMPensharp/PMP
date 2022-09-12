@@ -12,7 +12,7 @@
 
 ## 기술 스택
 
-[![My Skills](https://skillicons.dev/icons?i=java,androidstudio,python,tansorflow)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=java,androidstudio,python,tensorflow)](https://skillicons.dev)
 
 <br>
 
@@ -38,10 +38,10 @@
 ## 배운 점 & 아쉬운 점
 
 <p align="justify">
-* 데이터를 기반으로한 시각화를 제대로 경험한 경험이었습니다.
-* 공공데이터 기반 api를 실제로 사용해보았고, 그를 기반으로 알맞게 데이터를 선택하여 시각화 할 수 있었다.
-* 공공데이터 기반 api를 실제로 사용해보았고, 그를 기반으로 알맞게 예측량을 표시할 수 있었다.
-* 시각화와에 대한 재미와 모니터링의 기본 개념을 습득 하였다.
+* 데이터를 기반으로한 시각화를 제대로 경험한 경험이었습니다.<br/>
+* 공공데이터 기반 api를 실제로 사용해보았고, 그를 기반으로 알맞게 데이터를 선택하여 시각화 할 수 있었다.<br/>
+* 공공데이터 기반 api를 실제로 사용해보았고, 그를 기반으로 알맞게 예측량을 표시할 수 있었다.<br/>
+* 시각화와에 대한 재미와 모니터링의 기본 개념을 습득 하였다.<br/>
 </p>
 
 <br>
